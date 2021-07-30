@@ -30,6 +30,7 @@ public class Shop {
 
     public void removeItem(ISell item){
         int idx = findItem(item);
+        stock.remove(idx);
     }
 
     public Integer findItem(ISell item){

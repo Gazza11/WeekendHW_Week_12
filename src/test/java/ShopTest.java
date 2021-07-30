@@ -24,6 +24,7 @@ public class ShopTest {
     GuitarStrings guitarStrings1;
     GuitarStrings guitarStrings2;
     ArrayList<ISell> stock;
+    ArrayList<ISell> stockWithoutGuitar2;
 
     @Before
     public void before(){
@@ -37,6 +38,9 @@ public class ShopTest {
         stock = new ArrayList<>();
         stock.addAll(stockList);
         shop = new Shop("Ray's Music", stock);
+        List<ISell> stockListWithoutGuitar2 = Arrays.asList(guitar1, drumSet, guitarStrings1, drumSticks);
+        stockWithoutGuitar2 = new ArrayList<>();
+        stockWithoutGuitar2.addAll(stockListWithoutGuitar2);
     }
 
     @Test
@@ -65,11 +69,17 @@ public class ShopTest {
         assertEquals(0, shop.findItem(guitar1), 0.01);
     }
 
-    @Ignore
     @Test
     public void canRemoveItemFromStock(){
         shop.removeItem(guitar2);
         assertEquals(4, shop.getStockSize(), 0.01);
+    }
+
+    @Test
+    public void canRemoveItemFromStock__ArrayCheck(){
+        assertEquals(stock, shop.getStock());
+        shop.removeItem(guitar2);
+        assertEquals(stockWithoutGuitar2, shop.getStock());
     }
 
 }
