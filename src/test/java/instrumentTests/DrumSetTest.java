@@ -62,4 +62,9 @@ public class DrumSetTest {
         drumSet.setNumberOfCymbals(5);
         assertEquals(5, drumSet.getNumberOfCymbals(), 0.01);
     }
+
+    @Test
+    public void canPlay(){
+        assertEquals("Seven Nation Army", drumSet.play());
+    }
 }

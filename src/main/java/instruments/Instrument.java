@@ -1,6 +1,6 @@
 package instruments;
 
-public class Instrument {
+public abstract class Instrument {
 
     private String make;
     private String colour;
@@ -43,4 +43,5 @@ public class Instrument {
     public void setSellingPrice(Double sellingPrice) {
         this.sellingPrice = sellingPrice;
     }
+
 }

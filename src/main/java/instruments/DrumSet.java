@@ -1,6 +1,6 @@
 package instruments;
 
-public class DrumSet extends Instrument{
+public class DrumSet extends Instrument implements IPlay{
 
     private Integer numberOfDrums;
     private Integer numberOfCymbals;
@@ -25,5 +25,9 @@ public class DrumSet extends Instrument{
 
     public void setNumberOfCymbals(Integer numberOfCymbals) {
         this.numberOfCymbals = numberOfCymbals;
+    }
+
+    public String play(){
+        return "Seven Nation Army";
     }
 }
