@@ -5,6 +5,7 @@ import instruments.Guitar;
 import instruments.ISell;
 import instruments.InstrumentType;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -60,8 +61,15 @@ public class ShopTest {
     }
 
     @Test
+    public void canFindItem(){
+        assertEquals(0, shop.findItem(guitar1), 0.01);
+    }
+
+    @Ignore
+    @Test
     public void canRemoveItemFromStock(){
         shop.removeItem(guitar2);
         assertEquals(4, shop.getStockSize(), 0.01);
     }
+
 }

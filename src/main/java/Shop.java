@@ -24,7 +24,20 @@ public class Shop {
         return stock.size();
     }
 
-    public void addStock(ISell stock){
-        getStock().add(stock);
+    public void addStock(ISell item){
+        getStock().add(item);
+    }
+
+    public void removeItem(ISell item){
+        int idx = findItem(item);
+    }
+
+    public Integer findItem(ISell item){
+        for(int i = 0; i < getStockSize(); i++){
+            if(stock.get(i) == item){
+                return i;
+            }
+        }
+        return null;
     }
 }
