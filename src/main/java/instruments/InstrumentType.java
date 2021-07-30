@@ -3,7 +3,7 @@ package instruments;
 public enum InstrumentType {
     GUITAR,
     TRUMPET,
-    DRUMS,
+    DRUMSET,
     PIANO;
 
 }
