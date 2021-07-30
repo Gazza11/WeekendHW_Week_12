@@ -65,7 +65,7 @@ public class ShopTest {
     }
 
     @Test
-    public void canFindItem(){
+    public void canFindItemIndex(){
         assertEquals(0, shop.findItem(guitar1), 0.01);
     }
 
@@ -80,6 +80,23 @@ public class ShopTest {
         assertEquals(stock, shop.getStock());
         shop.removeItem(guitar2);
         assertEquals(stockWithoutGuitar2, shop.getStock());
+    }
+
+    @Test
+    public void canCalculateTotalPossibleProfit(){
+        assertEquals(965.49, shop.getPotentialProfit(), 0.01);
+    }
+
+    @Test
+    public void canCalculatePossibleProfit__AddItem(){
+        shop.addStock(guitarStrings2);
+        assertEquals(994.49, shop.getPotentialProfit(), 0.01);
+    }
+
+    @Test
+    public void canCalculatePossibleProfit__RemoveItem(){
+        shop.removeItem(guitar1);
+        assertEquals(836.48, shop.getPotentialProfit(), 0.01);
     }
 
 }
