@@ -1,9 +1,10 @@
 package instruments;
 
 public enum InstrumentType {
-    GUITAR,
-    TRUMPET,
-    DRUMSET,
-    PIANO;
+    STRING,
+    BRASS,
+    PERCUSSION,
+    KEYBOARDS,
+    WOODWIND;
 
 }

@@ -13,7 +13,7 @@ public class GuitarTest {
 
     @Before
     public void before(){
-        guitar = new Guitar("Fender", "Red", InstrumentType.GUITAR,  120.99, 250.00, 6);
+        guitar = new Guitar("Fender", "Red", InstrumentType.STRING,  120.99, 250.00, 6);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class GuitarTest {
 
     @Test
     public void hasInstrumentType(){
-        assertEquals(InstrumentType.GUITAR, guitar.getType());
+        assertEquals(InstrumentType.STRING, guitar.getType());
     }
 
     @Test
@@ -49,5 +49,10 @@ public class GuitarTest {
     @Test
     public void canPlay(){
         assertEquals("Wonderwall", guitar.play());
+    }
+
+    @Test
+    public void hasMarkupValue(){
+        assertEquals(129.01, guitar.calculateMarkup(), 0.01);
     }
 }

@@ -13,7 +13,7 @@ public class DrumSetTest {
 
     @Before
     public void before(){
-        drumSet = new DrumSet("Zildjian", "Gold", InstrumentType.DRUMSET, 149.98, 300., 5, 3);
+        drumSet = new DrumSet("Zildjian", "Gold", InstrumentType.PERCUSSION, 149.98, 300., 5, 3);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class DrumSetTest {
 
     @Test
     public void hasInstrumentType(){
-        assertEquals(InstrumentType.DRUMSET, drumSet.getType());
+        assertEquals(InstrumentType.PERCUSSION, drumSet.getType());
     }
 
     @Test
@@ -66,5 +66,10 @@ public class DrumSetTest {
     @Test
     public void canPlay(){
         assertEquals("Seven Nation Army", drumSet.play());
+    }
+
+    @Test
+    public void hasMarkup(){
+        assertEquals(150.02, drumSet.calculateMarkup(), 0.01);
     }
 }

@@ -1,6 +1,6 @@
 package instruments;
 
-public class DrumSet extends Instrument implements IPlay{
+public class DrumSet extends Instrument implements IPlay, ISell{
 
     private Integer numberOfDrums;
     private Integer numberOfCymbals;
@@ -29,5 +29,9 @@ public class DrumSet extends Instrument implements IPlay{
 
     public String play(){
         return "Seven Nation Army";
+    }
+
+    public Double calculateMarkup(){
+        return getSellingPrice() - getBoughtFor();
     }
 }
